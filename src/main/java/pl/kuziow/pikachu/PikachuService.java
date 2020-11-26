@@ -13,7 +13,7 @@ public class PikachuService {
     @Autowired
     private RestTemplate restTemplate;
 
-
+//to jest na pewno do poprawki
     public List<Pikachu> allTypes(){
         List<Pikachu> allTypes = new ArrayList<>();
 
