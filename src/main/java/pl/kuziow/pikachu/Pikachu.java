@@ -2,7 +2,7 @@ package pl.kuziow.pikachu;
 
 public class Pikachu {
 
-    private String name;
+    private String nam;
     private String url;
 
     public String getName() {
