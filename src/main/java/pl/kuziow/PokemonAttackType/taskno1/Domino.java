@@ -1,4 +1,4 @@
-package pl.kuziow.pikachu.taskno1;
+package pl.kuziow.PokemonAttackType.taskno1;
 
 import java.util.List;
 import java.util.Scanner;

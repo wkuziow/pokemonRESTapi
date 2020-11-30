@@ -1,18 +1,18 @@
-package pl.kuziow.pikachu;
+package pl.kuziow.PokemonAttackType;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class PikachuController {
+
+@Controller
+public class PokemonAttackTypeController {
 
 
-    @RequestMapping(value = "/{type1}/{type2}", method = RequestMethod.GET)
-    public int home(@PathVariable String type1, String type2){
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home() {
 
         // first we need to create the List of all types
 
@@ -23,13 +23,11 @@ public class PikachuController {
         //under the url of the first type we search for type 2 in the List of Damage relations and sum up the damage
         //we return the final sum of damages
 
-        //all above methods will be written in the PikachuService.class
+        //all above methods will be written in the PokemonAttackTypeService.class
 
 
-
-        return
-
-
+        System.out.println("hi");
+        return "home";
 
     }
 }
