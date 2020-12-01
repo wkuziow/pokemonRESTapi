@@ -24,8 +24,6 @@ public class PokemonAttackTypeService {
 
         allTypes = pokemonResult.getResults();
 
-
-
         return allTypes;
     }
 

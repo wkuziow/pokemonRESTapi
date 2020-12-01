@@ -1,18 +1,30 @@
 package pl.kuziow.PokemonAttackType;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
+
+
 @Controller
 public class PokemonAttackTypeController {
 
+    @Autowired
+    private PokemonAttackTypeService pokemonAttackTypeService;
+
+    private static final Logger logger = LoggerFactory.getLogger(PokemonAttackTypeController.class);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("pokemonList", pokemonAttackTypeService.allTypes());
+        logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 
         // first we need to create the List of all types
 
@@ -25,8 +37,6 @@ public class PokemonAttackTypeController {
 
         //all above methods will be written in the PokemonAttackTypeService.class
 
-
-        System.out.println("hi");
         return "home";
 
     }

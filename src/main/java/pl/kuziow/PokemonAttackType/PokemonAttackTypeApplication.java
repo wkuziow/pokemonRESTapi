@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
-public class PokemonAttackTypeApplication implements CommandLineRunner {
+public class PokemonAttackTypeApplication {
 
     private static final Logger log = LoggerFactory.getLogger(PokemonAttackTypeApplication.class);
 
