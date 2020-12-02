@@ -15,14 +15,19 @@
 </head>
 <body>
 <div class="container">
-    <ul>
-        <c:forEach var="el" items="${pokemonList}">
-            <li>
-                    ${el.name}
 
-            </li>
 
-        </c:forEach>
+      <form>
+
+            <div class="form-group row">
+                <label for="pokemonListId" class="col-sm-2 col-form-label">Aktywny:</label>
+                <div class="col-sm-10">
+                    <form:radiobuttons path="pokemonList" items="${pokemonList}" itemLabel="${pokemonList.getName()}" id="pokemonListId" class="form-control"/>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Zapisz</button>
+      </form>
+
 
     </ul>
 </div>

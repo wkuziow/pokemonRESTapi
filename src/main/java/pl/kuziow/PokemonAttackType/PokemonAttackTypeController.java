@@ -5,12 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -22,7 +17,7 @@ public class PokemonAttackTypeController {
     private static final Logger logger = LoggerFactory.getLogger(PokemonAttackTypeController.class);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model) {
+    public String homeGet(Model model) {
         model.addAttribute("pokemonList", pokemonAttackTypeService.allTypes());
         logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 
@@ -38,6 +33,11 @@ public class PokemonAttackTypeController {
         //all above methods will be written in the PokemonAttackTypeService.class
 
         return "home";
+    }
 
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public String homePost(@ModelAttribute String pokemonAttackType1) {
+        System.out.println(pokemonAttackType1);
+        return "home";
     }
 }
