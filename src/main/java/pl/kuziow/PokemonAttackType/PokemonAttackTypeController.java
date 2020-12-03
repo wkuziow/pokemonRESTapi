@@ -19,6 +19,7 @@ public class PokemonAttackTypeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homeGet(Model model) {
         model.addAttribute("pokemonList", pokemonAttackTypeService.allTypes());
+        model.addAttribute("firstType", new PokemonAttackType());
         logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 
         // first we need to create the List of all types
@@ -36,8 +37,8 @@ public class PokemonAttackTypeController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String homePost(@ModelAttribute String pokemonAttackType1) {
-        System.out.println(pokemonAttackType1);
-        return "home";
+    public String homePost(@ModelAttribute PokemonAttackType firstType) {
+        System.out.println(firstType.getName());
+        return "redirect:/";
     }
 }

@@ -17,19 +17,22 @@
 <div class="container">
 
 
-      <form>
+    <form:form method="post" modelAttribute="firstType">
 
-            <div class="form-group row">
-                <label for="pokemonListId" class="col-sm-2 col-form-label">Aktywny:</label>
-                <div class="col-sm-10">
-                    <form:radiobuttons path="pokemonList" items="${pokemonList}" itemLabel="${pokemonList.getName()}" id="pokemonListId" class="form-control"/>
-                </div>
+        <div class="form-group row">
+            <label for="pokemonListId" class="col-sm-2 col-form-label">Typ:</label>
+            <div class="col-sm-10">
+                <c:forEach var="element" items="${pokemonList}">
+                    <form:radiobutton path="name" name="pokemonList" value="${element.name}" id="pokemonListId"
+                                      class="form-check"/>
+                    ${element.name}
+                </c:forEach>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Zapisz</button>
-      </form>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Zapisz</button>
+    </form:form>
 
 
-    </ul>
 </div>
 
 </body>
