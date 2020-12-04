@@ -19,7 +19,7 @@ public class PokemonAttackTypeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String homeGet(Model model) {
         model.addAttribute("pokemonList", pokemonAttackTypeService.allTypes());
-        model.addAttribute("firstType", new PokemonAttackType());
+     //   model.addAttribute("firstType", new PokemonAttackType());
         logger.info(Thread.currentThread().getStackTrace()[1].getMethodName());
 
         // first we need to create the List of all types

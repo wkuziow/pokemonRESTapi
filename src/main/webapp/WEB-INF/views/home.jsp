@@ -17,13 +17,16 @@
 <div class="container">
 
 
-    <form:form method="post" modelAttribute="firstType">
+    <form:form method="post" action="#">
+    <%--           modelAttribute="firstType" --%>
+
 
         <div class="form-group row">
             <label for="pokemonListId" class="col-sm-2 col-form-label">Typ:</label>
             <div class="col-sm-10">
                 <c:forEach var="element" items="${pokemonList}">
-                    <form:radiobutton path="name" name="pokemonList" value="${element.name}" id="pokemonListId"
+                    <form:radiobutton path="name" id="pokemonListId"
+                                      value="${element}"
                                       class="form-check"/>
                     ${element.name}
                 </c:forEach>
